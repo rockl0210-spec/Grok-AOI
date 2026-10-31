@@ -1,0 +1,29 @@
+__pycache__/
+*.py[cod]
+*.egg-info/
+.eggs/
+dist/
+build/
+.venv/
+venv/
+.env
+*.log
+
+# run outputs and local data
+out/
+outputs/
+data/
+aoi_db/
+aoi_out/
+aoi_final/
+aoi_eval/
+aoi_work/
+
+# intermediate filter state
+*.pkl
+*.pickle
+
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.ipynb_checkpoints/
