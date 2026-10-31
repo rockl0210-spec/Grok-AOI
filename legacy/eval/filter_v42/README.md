@@ -1,0 +1,1 @@
+filter_v42 驗證。腳本：common.py、h1_verify.py（完整性/差異/plan D/same_object）、h2_ret.py（保留率）、h3_flip.py（以 rules42 在 flip 注入集上重跑；需 filter_v41 的 M_union41.pkl，已依指示刪除，需重跑請先用 filter_v41/g5_union.py 重建）、h4_flip.py。結論見 eval.md；tables/ 為彙總表。無逐候選檔。

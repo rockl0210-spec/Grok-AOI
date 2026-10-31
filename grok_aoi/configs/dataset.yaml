@@ -1,0 +1,55 @@
+# Default dataset profile (the reference / Willson capture).
+# Copy this file to inspect a different database: clear preprocess_labels, and
+# change anomaly frames / e_strip. Frame counts are never asserted.
+# NEXP is the candidate count of the run, not a constant.
+
+profile: willson
+
+image:
+  width: 2464
+  height: 2056
+
+# Frames that cannot be called real unless a neighbouring normal frame confirms them.
+anomaly_frames:
+  edge: [0, 45]
+  side: [0, 15]
+
+# Documented lengths of the reference capture. Not checked against the folder.
+reference_frame_counts:
+  edge: 46
+  side: 16
+
+# Preprocess artifact window. enabled: false disables the rule on other data.
+e_strip:
+  enabled: true
+  folder: Side_270
+  frame: 15
+  x0: 1380
+  x1: 1500
+  y0: 780
+  y1: 1460
+  max_area: 200
+
+# Preview overlay inside filter outputs. Used only when that frame exists.
+overlay_exemplar:
+  Edge2_090: 27
+
+# Reported when present; a missing id is recorded as an empty list, not an error.
+highlight_ids:
+  - Side_000_05_c0736
+stain_id: Edge2_090_27_c1848
+
+# Confirmed frame-level labels merged into preprocess v3 (class -> frame numbers).
+# Unknown frames are ignored. Use {} when the database has no confirmed labels.
+preprocess_labels:
+  Edge1/000:
+    oil: [20, 21, 24, 25]
+    water: [25]
+  Edge1/090:
+    oil: [17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 28]
+    water: [18, 19, 20, 21, 22, 23, 24]
+  Side/000:
+    fixture: [0, 15]
+
+# Side T2 rule (b) stays off unless the CLI is given --legacy-v31-decisions.
+legacy_rule_b: false

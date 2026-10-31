@@ -1,0 +1,13 @@
+# Library pins from the research environment (Python 3.13.5).
+# The package also runs on Python 3.12 with these pins.
+#   pip install -r requirements.txt
+numpy==2.5.4
+scipy==1.18.1
+pandas==3.0.6
+opencv-python-headless==5.0.0.93
+scikit-image==0.26.0
+PyYAML==6.0.3
+matplotlib==3.11.2
+pillow==13.0.0
+tifffile==2026.10.15
+imageio==2.38.1

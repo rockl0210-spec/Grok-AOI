@@ -1,0 +1,31 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "grok-aoi"
+version = "1.0.0"
+description = "Semiconductor surface optical-cleanliness AOI (preprocess v3, detection v4.1, filter v4.2)"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+  "numpy==2.5.4",
+  "scipy==1.18.1",
+  "pandas==3.0.6",
+  "opencv-python-headless==5.0.0.93",
+  "scikit-image==0.26.0",
+  "PyYAML==6.0.3",
+  "matplotlib==3.11.2",
+  "pillow==13.0.0",
+  "tifffile==2026.10.15",
+  "imageio==2.38.1",
+]
+
+[project.scripts]
+grok-aoi = "grok_aoi.cli:main"
+
+[tool.setuptools.packages.find]
+include = ["grok_aoi*", "aoi_preprocess*"]
+
+[tool.setuptools.package-data]
+grok_aoi = ["configs/*.yaml", "filter/glare_bands.json"]
